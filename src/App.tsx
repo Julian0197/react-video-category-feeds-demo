@@ -1,24 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import NavBar from "./components/NavBar";
+import Tabs from "./components/Tabs";
+import BannerImage from "./assets/banner.png";
+import FooterImage from "./assets/footer.jpg";
+import Category from "./components/Category";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <NavBar />
+
+      <Tabs />
+
+      <img src={BannerImage} alt="Banner" />
+
+      <h2>热门</h2>
+      <Category />
+
+      <h2>直播</h2>
+      <Category />
+
+      <h2>推荐</h2>
+      <Category />
+
+      <img src={FooterImage} alt="Footer" />
+
+      <footer>
+        <span>@Bilibili 2023</span>
+      </footer>
     </div>
   );
 }
