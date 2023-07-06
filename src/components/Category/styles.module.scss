@@ -1,0 +1,27 @@
+.category {
+  width: 100%;
+  overflow: auto;
+
+  ul {
+    padding: 16px;
+    display: flex;
+
+    li {
+      list-style: none;
+      margin-right: 16px;
+
+      // 伪类选择器，选择的是已有元素处于某种状态，用: `:hover` `:first-child`
+      // 伪元素选择器，选择的特殊效果的虚拟元素，如 `::first-letter` `::before`
+      &:last-child { // 伪类，选择的是真实元素
+        margin-right: 0px;
+      }
+
+      video {
+        background: black;
+        border-radius: 6px;
+        width: 136px;
+        height: 240px;
+      }
+    }
+  }
+}

@@ -1,12 +1,25 @@
 import {FC} from "react"
+import { VideoData } from "../../constants/data"
+import styles from './styles.module.scss'
 
-const Category: FC = () => {
+interface Props {
+  list: VideoData[]
+}
+
+const Category: FC<Props> = (props) => {
+  const { list } = props;
+
   return (
     // 语义化标签
-    <ul>
-      <li>1</li>
-      <li>2</li>
+    <div className={styles.category}>
+      <ul>
+      {list.map(videoData => (
+        <li key={videoData.id}>
+          <video src={videoData.src}></video>
+        </li>
+      ))}
     </ul>
+    </div>
   )
 }
 
